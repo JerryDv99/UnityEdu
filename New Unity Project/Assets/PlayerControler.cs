@@ -6,6 +6,11 @@ public class PlayerControler : MonoBehaviour
 {
     private float Speed;
     private Rigidbody Rigid = null;
+
+    public Transform FirePoint;
+    public GameObject BulletPrefab;
+    public float Power;
+
     // 런타임 이후에 처음 한번 실행
     // Start 함수보다 먼저 실행됨
     private void Awake()
@@ -25,8 +30,9 @@ public class PlayerControler : MonoBehaviour
     {
         Speed = 5.0f;
 
+        Power = 0;
         // Rigidbody 컴퍼넌트에 transform.forward 방향으로 500.0f 만큼 힘을 가한다
-        Rigid.AddForce(transform.forward * 2500.0f);
+        //Rigid.AddForce(transform.forward * 2500.0f);
     }
 
     /*
@@ -37,6 +43,7 @@ public class PlayerControler : MonoBehaviour
     }
 
     // Update is called once per frame
+     */
     void Update()
     {
         // -1 ~ +1 까지 실수 단위로 반환 
@@ -50,6 +57,25 @@ public class PlayerControler : MonoBehaviour
         //Vector3 Movement = Vector3.forward * Speed;
         Vector3 Movement = new Vector3(fHor, 0.0f, fVer) * Speed * Time.deltaTime;
         transform.position += Movement;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Power = 0;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Power += Time.deltaTime;
+
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            // 객체 복제 함수
+            GameObject obj = Instantiate(BulletPrefab);
+            obj.transform.position = FirePoint.position;
+
+            Rigidbody Rigid = obj.GetComponent<Rigidbody>();
+            Rigid.AddForce(FirePoint.transform.forward * Power * 1000);
+        }
+
     }
-     */
 }
