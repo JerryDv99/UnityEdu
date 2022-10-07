@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private float Speed;
+    public GameObject Fx;
 
-    private void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-      
-    }
-    // Update is called once per frame
-    void Update()
-    {
-       
+        Destroy(this.gameObject, 0.05f);
+        GameObject Obj = Instantiate(Fx);
+        Obj.transform.position = transform.position;
+
+        Obj.transform.LookAt(Camera.main.transform.position);
     }
 }
