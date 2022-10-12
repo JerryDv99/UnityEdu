@@ -104,7 +104,7 @@ public class PlayerControler : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.E))
                 {
-                    //EnemyManager.GetInstance()
+                    //EnemyManager.
                 }
             }
         }
