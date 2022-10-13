@@ -11,9 +11,6 @@ public class EnemyManager : MonoBehaviour
 
     private void Awake()
     {
-        // 월드에 빈 게임오브젝트 EnemyList 생성
-        new GameObject("EnemyList");
-
         if (Instance == null)
             Instance = this;
     }
