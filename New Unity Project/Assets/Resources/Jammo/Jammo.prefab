@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6262694763447013584}
   m_Layer: 0
   m_Name: head_main_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 96086968251582142}
   m_Layer: 0
   m_Name: Armature.001
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 995571435610244061}
   m_Layer: 0
   m_Name: head_screen_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 5794976024657455330}
   m_Layer: 0
   m_Name: forearm_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 1395320242012739722}
   m_Layer: 0
   m_Name: ankle_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 5619187129195360685}
   m_Layer: 0
   m_Name: finger_pinky_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1276,7 +1276,7 @@ GameObject:
   - component: {fileID: 949721157108696314}
   m_Layer: 0
   m_Name: heels_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1580,7 +1580,7 @@ GameObject:
   - component: {fileID: 659157619550810402}
   m_Layer: 0
   m_Name: shoulder_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1756,7 +1756,7 @@ GameObject:
   - component: {fileID: 3620733349272942700}
   m_Layer: 0
   m_Name: ears_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1900,7 +1900,7 @@ GameObject:
   - component: {fileID: 3793057453595186168}
   m_Layer: 0
   m_Name: upperarm_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2172,7 +2172,7 @@ GameObject:
   - component: {fileID: 2616046393848737358}
   m_Layer: 0
   m_Name: pelvis_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2446,7 +2446,7 @@ GameObject:
   - component: {fileID: 4732192182859744278}
   m_Layer: 0
   m_Name: finger_thumb_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2780,7 +2780,7 @@ GameObject:
   - component: {fileID: 3297705008985115628}
   m_Layer: 0
   m_Name: shin_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2956,7 +2956,7 @@ GameObject:
   - component: {fileID: 9090047451857749686}
   m_Layer: 0
   m_Name: ear_joint_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3100,7 +3100,7 @@ GameObject:
   - component: {fileID: 5314520880365922734}
   m_Layer: 0
   m_Name: screw_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3244,7 +3244,7 @@ GameObject:
   - component: {fileID: 4555322506621875353}
   m_Layer: 0
   m_Name: torso_mid_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3388,7 +3388,7 @@ GameObject:
   - component: {fileID: 7154061696612284070}
   m_Layer: 0
   m_Name: head_mohawk_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3532,7 +3532,7 @@ GameObject:
   - component: {fileID: 6544001592755482636}
   m_Layer: 0
   m_Name: scarf_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3771,7 +3771,7 @@ GameObject:
   - component: {fileID: 7025866127132236239}
   m_Layer: 0
   m_Name: feet_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4235,7 +4235,7 @@ GameObject:
   - component: {fileID: 5228855922300705337}
   m_Layer: 0
   m_Name: wrist_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4414,7 +4414,7 @@ GameObject:
   - component: {fileID: 2855250079827497968}
   m_Layer: 0
   m_Name: finger_index_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4589,7 +4589,7 @@ GameObject:
   - component: {fileID: 5742313476907452259}
   m_Layer: 0
   m_Name: palm_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4764,7 +4764,7 @@ GameObject:
   - component: {fileID: 8644290444017839276}
   m_Layer: 0
   m_Name: finger_middle_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5004,7 +5004,7 @@ GameObject:
   - component: {fileID: 6202898035949300534}
   m_Layer: 0
   m_Name: head_eyes_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5212,7 +5212,7 @@ GameObject:
   - component: {fileID: 7661793835969353855}
   m_Layer: 0
   m_Name: thigh_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5354,9 +5354,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3092431802952730559}
   - component: {fileID: 3334367017746510899}
+  - component: {fileID: 7216966091806057417}
   m_Layer: 0
   m_Name: Jammo
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5422,6 +5423,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &7216966091806057417
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669063580161632377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &8733619917021193839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5465,7 +5480,7 @@ GameObject:
   - component: {fileID: 78127462838540424}
   m_Layer: 0
   m_Name: chest_low
-  m_TagString: Untagged
+  m_TagString: Jammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

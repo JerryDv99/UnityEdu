@@ -10,7 +10,7 @@ public class CreateEnemy : MonoBehaviour
     //[SerializeField] private SkinnedMeshRenderer renderer = null;
     private List<string> names = new List<string>();
 
-    private GameObject Obj;
+    //private GameObject Obj;
 
     // 충돌이 감지되면 실행되는 충돌감지 함수, Collider 필요
     private void OnCollisionEnter(Collision collision)
@@ -24,7 +24,9 @@ public class CreateEnemy : MonoBehaviour
         // 0.5초 후에 함수를 재실행
         yield return new WaitForSeconds(0.5f);
 
-        Obj = Instantiate(EnemyPrefab);
+        GameObject Obj = Instantiate(EnemyPrefab);
+
+        Obj.transform.tag = "Jammo";
 
         Obj.transform.position = transform.position;
 
