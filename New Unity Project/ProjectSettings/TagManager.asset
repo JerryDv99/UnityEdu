@@ -6,16 +6,19 @@ TagManager:
   tags:
   - FxTemporaire
   - Bullet
+  - Wall
+  - Ground
+  - Jammo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Bullet
-  - Player
   - Wall
+  - Ground
   - 
   - 
   - 

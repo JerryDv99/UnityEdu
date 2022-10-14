@@ -42,9 +42,7 @@ public class EnemyController : MonoBehaviour
                 {
                     fAngle = Vector3.Angle(transform.forward, PointList[i]);
 
-                    if (i > 3) fAngle *= -1;
-
-                    Debug.Log(fAngle);
+                    if (i > 3) fAngle *= -2;
                 }
             }
         }
