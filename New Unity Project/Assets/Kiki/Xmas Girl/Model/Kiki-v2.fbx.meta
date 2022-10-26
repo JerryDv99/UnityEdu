@@ -1,12 +1,99 @@
 fileFormatVersion: 2
-guid: b3c0554ac574b9d4b9b965b15ead024a
+guid: 4990ae0b2256fe5428e4841ac73d763f
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
+      74: -887982601649841707
+    second: metarig|metarigAction
+  - first:
+      74: -7531395698052448651
+    second: metarig|oniichan-Hentai Ref
+  - first:
+      74: -4877039269125381351
+    second: metarig|Point
+  - first:
+      74: -5980111370788615050
+    second: metarig|Shader NodetreeAction
+  - first:
+      74: 3635440386729644815
+    second: metarig|Yell 1
+  - first:
+      74: -607199105289415048
+    second: metarig|yell 2
+  - first:
+      74: 6145777795940531476
+    second: "metarig|\u3061\u3073\u30D5\u30E9\u30F3_mesh.014Action"
+  - first:
+      74: -7284263559690564283
+    second: HairRig|metarigAction
+  - first:
+      74: -8253720923411442632
+    second: HairRig|Shader NodetreeAction
+  - first:
+      74: 7039400946567505855
+    second: "HairRig|\u3061\u3073\u30D5\u30E9\u30F3_mesh.014Action"
+  - first:
+      74: -3073971165197417560
+    second: Hair|metarigAction
+  - first:
+      74: -910173173684372988
+    second: Hair|Shader NodetreeAction
+  - first:
+      74: 4868511698225619611
+    second: "Hair|\u3061\u3073\u30D5\u30E9\u30F3_mesh.014Action"
+  - first:
+      74: 2265889345930837592
+    second: Face.003|metarigAction
+  - first:
+      74: 705919431097624444
+    second: Face.003|Shader NodetreeAction
+  - first:
+      74: -8665068689132288106
+    second: "Face.003|\u3061\u3073\u30D5\u30E9\u30F3_mesh.014Action"
+  - first:
+      74: -5152010334838166647
+    second: Hair.002|metarigAction
+  - first:
+      74: -7520443422468119579
+    second: Hair.002|Shader NodetreeAction
+  - first:
+      74: -3298873472686455101
+    second: "Hair.002|\u3061\u3073\u30D5\u30E9\u30F3_mesh.014Action"
+  - first:
       74: -623603649343465320
-    second: Idle
-  externalObjects: {}
+    second: point
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye
+    second: {fileID: 2100000, guid: 294f1200b0cb31f4b9788e9a6e0d70db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EyeBrowAndlash
+    second: {fileID: 2100000, guid: c4bb335175d18284ab3ff5ff691855d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: c6bbbd67abf4251499c06584497fa75d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: 24834fbe6761e14499f31a219a8fa033, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair lightReflect
+    second: {fileID: 2100000, guid: fa174012558b1684d8697175f8fbb914, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: X-masDress
+    second: {fileID: 2100000, guid: 829fb7808d20da440bacbca6b482c9b9, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -17,7 +104,6 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -36,218 +122,34 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: point
       takeName: Scene
       internalID: 0
-      firstFrame: 0
-      lastFrame: 40
+      firstFrame: 20
+      lastFrame: 188
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Dress_mesh.003
-        weight: 0
-      - path: metarig
-        weight: 1
-      - path: metarig/pevis
-        weight: 1
-      - path: metarig/pevis/spine
-        weight: 1
-      - path: metarig/pevis/spine/spine_01
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.B
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.B/Skirt.B.001
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.B/Skirt.B.001/Skirt.B.002
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.B/Skirt.B.001/Skirt.B.002/Skirt.B.002_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.F
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.F/Skirt.F.001
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.F/Skirt.F.001/Skirt.F.002
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.F/Skirt.F.001/Skirt.F.002/Skirt.F.002_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.L/Skirt.L.001
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.L/Skirt.L.001/Skirt.L.002
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.L/Skirt.L.001/Skirt.L.002/Skirt.L.002_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.R/Skirt.R.001
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.R/Skirt.R.001/Skirt.R.002
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/Skirt.R/Skirt.R.001/Skirt.R.002/Skirt.R.002_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/Accesstory
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/Accesstory/Accesstory_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/neck
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/neck/head
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/neck/head/Face.003
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/neck/head/Hair.002
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/neck/head/Hat_mesh.001
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/neck/head/head_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/shoulder.L Dress
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/shoulder.L Dress/shoulder.L
-          Dress_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_index.01.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_index.01.L/f_index.02.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_index.01.L/f_index.02.L/f_index.03.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_index.01.L/f_index.02.L/f_index.03.L/f_index.03.L_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_middle.01.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_middle.01.L/f_middle.02.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_middle.01.L/f_middle.02.L/f_middle.03.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_middle.01.L/f_middle.02.L/f_middle.03.L/f_middle.03.L_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_pinky.01.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_pinky.01.L/f_pinky.02.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_pinky.01.L/f_pinky.02.L/f_pinky.03.L/f_pinky.03.L_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L/f_ring.02.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L/f_ring.02.L/f_ring.03.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L/f_ring.02.L/f_ring.03.L/f_ring.03.L_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L/thumb.03.L
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.01.L/thumb.02.L/thumb.03.L/thumb.03.L_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/shoulder.R Dress
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/shoulder.R Dress/shoulder.R
-          Dress_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_index.01.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_index.01.R/f_index.02.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_index.01.R/f_index.02.R/f_index.03.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_index.01.R/f_index.02.R/f_index.03.R/f_index.03.R_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_middle.01.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_middle.01.R/f_middle.02.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_middle.01.R/f_middle.02.R/f_middle.03.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_middle.01.R/f_middle.02.R/f_middle.03.R/f_middle.03.R_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_pinky.01.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_pinky.01.R/f_pinky.02.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_pinky.01.R/f_pinky.02.R/f_pinky.03.R/f_pinky.03.R_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_ring.01.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_ring.01.R/f_ring.02.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_ring.01.R/f_ring.02.R/f_ring.03.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/f_ring.01.R/f_ring.02.R/f_ring.03.R/f_ring.03.R_end
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R/thumb.03.R
-        weight: 1
-      - path: metarig/pevis/spine/spine_01/spine_02/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.01.R/thumb.02.R/thumb.03.R/thumb.03.R_end
-        weight: 1
-      - path: metarig/pevis/thigh.L
-        weight: 1
-      - path: metarig/pevis/thigh.L/shin.L
-        weight: 1
-      - path: metarig/pevis/thigh.L/shin.L/foot.L
-        weight: 1
-      - path: metarig/pevis/thigh.L/shin.L/foot.L/foot.L_end
-        weight: 1
-      - path: metarig/pevis/thigh.R
-        weight: 1
-      - path: metarig/pevis/thigh.R/shin.R
-        weight: 1
-      - path: metarig/pevis/thigh.R/shin.R/foot.R
-        weight: 1
-      - path: metarig/pevis/thigh.R/shin.R/foot.R/foot.R_end
-        weight: 1
-      maskType: 1
-      maskSource: {fileID: 31900000, guid: e6dbc19d0ff717d41a68aa2415de2a75, type: 2}
-      additiveReferencePoseFrame: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -260,27 +162,21 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 1
-    secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -1164,13 +1060,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b19a8181ecbf08f489a7d5d367cb102a, type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 2
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

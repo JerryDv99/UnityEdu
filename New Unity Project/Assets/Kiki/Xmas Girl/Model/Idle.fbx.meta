@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: b3c0554ac574b9d4b9b965b15ead024a
+guid: b737603d060446b4dac22a99b89b514c
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -623603649343465320
@@ -17,7 +17,6 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -246,7 +245,7 @@ ModelImporter:
       - path: metarig/pevis/thigh.R/shin.R/foot.R/foot.R_end
         weight: 1
       maskType: 1
-      maskSource: {fileID: 31900000, guid: e6dbc19d0ff717d41a68aa2415de2a75, type: 2}
+      maskSource: {fileID: 31900000, guid: 0472d1b2a34423842b83c891a24c8970, type: 2}
       additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
@@ -260,27 +259,21 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 1
-    secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -1164,13 +1157,12 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: b19a8181ecbf08f489a7d5d367cb102a, type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 4990ae0b2256fe5428e4841ac73d763f,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 2
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
