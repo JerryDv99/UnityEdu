@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: b19a8181ecbf08f489a7d5d367cb102a
+guid: 4990ae0b2256fe5428e4841ac73d763f
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -887982601649841707
@@ -68,32 +68,32 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eye
-    second: {fileID: 2100000, guid: 070e640e8d2c7d34283ab8eb632e6102, type: 2}
+    second: {fileID: 2100000, guid: 294f1200b0cb31f4b9788e9a6e0d70db, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: EyeBrowAndlash
-    second: {fileID: 2100000, guid: 424a766b14db2ba4488907d9ff28231f, type: 2}
+    second: {fileID: 2100000, guid: c4bb335175d18284ab3ff5ff691855d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Face
-    second: {fileID: 2100000, guid: 0e9d77237a09f0c4ab724de3667ca85e, type: 2}
+    second: {fileID: 2100000, guid: c6bbbd67abf4251499c06584497fa75d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hair
-    second: {fileID: 2100000, guid: 77f2c81b6abcbdf4fa07617bdf1bfb4b, type: 2}
+    second: {fileID: 2100000, guid: 24834fbe6761e14499f31a219a8fa033, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hair lightReflect
-    second: {fileID: 2100000, guid: 942ea57ea92f61247a0e248731dd1ad6, type: 2}
+    second: {fileID: 2100000, guid: fa174012558b1684d8697175f8fbb914, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: X-masDress
-    second: {fileID: 2100000, guid: 51aa8ae1707d55d4b8fd725586eab528, type: 2}
+    second: {fileID: 2100000, guid: 829fb7808d20da440bacbca6b482c9b9, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -104,7 +104,6 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -163,27 +162,21 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
-    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 1
-    secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -1072,8 +1065,6 @@ ModelImporter:
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
