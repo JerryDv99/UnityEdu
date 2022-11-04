@@ -136,7 +136,7 @@ public class MyFieldOfView : MonoBehaviour
         for (int i = 0; i < ViewList.Count - 2; ++i)
         {
             for (int j = 0; j < 3; ++j)
-                triangles[i * 3 + j] = (((i % 3 + j)%3) == 0 ? 0 : i + j);
+                triangles[i * 3 + j] = (((i % 3) * ( j%3) + j) == 0 ? 0 : i + j);
         }
 
         mesh.Clear();
