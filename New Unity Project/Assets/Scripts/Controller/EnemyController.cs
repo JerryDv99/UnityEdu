@@ -129,8 +129,8 @@ public class EnemyController : MonoBehaviour
                         * RotationZ(eulerAngles.z);
 
                     ScaleMatrix = Scale(hit.transform.lossyScale);
-
-                    Matrix4x4 Matrix = PosMatrix * RotationMatrix;
+                     
+                    Matrix4x4 Matrix = PosMatrix * RotationMatrix * ScaleMatrix;
 
 
                     VertexList.Add(Matrix.MultiplyPoint(BottomPoint[i]));
@@ -251,9 +251,9 @@ public class EnemyController : MonoBehaviour
         //  0    0    z   0
         //  0    0    0   1
 
-        matrix.m00 = _scale.x;
+        matrix.m00 = _scale.x * 0.35f;
         matrix.m11 = _scale.y;
-        matrix.m22 = _scale.z;
+        matrix.m22 = _scale.z * 0.35f;
 
         return matrix;
     }
