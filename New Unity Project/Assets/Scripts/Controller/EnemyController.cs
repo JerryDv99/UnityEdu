@@ -112,9 +112,9 @@ public class EnemyController : MonoBehaviour
                 for (int i = 0; i < BottomPoint.Length; ++i)
                 {
                     BottomPoint[i] = new Vector3(
-                        Temp[i].x * hit.transform.lossyScale.x,
+                        Temp[i].x,// * hit.transform.lossyScale.x,
                         0.1f,
-                        Temp[i].z * hit.transform.lossyScale.z);
+                        Temp[i].z);// * hit.transform.lossyScale.z);
 
                     Matrix4x4 RotationMatrix;
                     Matrix4x4 PosMatrix;
@@ -251,10 +251,10 @@ public class EnemyController : MonoBehaviour
         //  0    0    z   0
         //  0    0    0   1
 
-        matrix.m00 = _scale.x * 0.35f;
+        matrix.m00 = _scale.x;
         matrix.m11 = _scale.y;
-        matrix.m22 = _scale.z * 0.35f;
+        matrix.m22 = _scale.z;
 
-        return matrix;
+        return matrix;  
     }
 }
