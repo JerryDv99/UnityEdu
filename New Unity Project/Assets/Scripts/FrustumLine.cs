@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FrustumLine : MonoBehaviour
@@ -16,6 +16,7 @@ public class FrustumLine : MonoBehaviour
     float Distance = 0.0f;
 
     [SerializeField] private List<GameObject> CullingList = new List<GameObject>();
+    [SerializeField] private List<GameObject> CulledList = new List<GameObject>();
     [SerializeField] private List<MeshRenderer> RendererList = new List<MeshRenderer>();
     [SerializeField] private LayerMask Mask;
 
@@ -55,11 +56,34 @@ public class FrustumLine : MonoBehaviour
             RaycastHit[] hits = Physics.RaycastAll(ray, Distance, Mask);
 
             foreach (RaycastHit hit in hits)
+            {
                 if (!CullingList.Contains(hit.transform.gameObject))
                     CullingList.Add(hit.transform.gameObject);
+                if (!CulledList.Contains(hit.transform.gameObject))
+                    CulledList.Add(hit.transform.gameObject);
+            }
         }
-        RendererList.Clear();
 
+        RendererList.Clear();
+        foreach(GameObject element in CulledList)
+            if (!CullingList.Contains(element))
+                FindRenderer(element);
+
+        foreach (MeshRenderer renderer in RendererList)
+        {
+            renderer.material.shader = Shader.Find("Transparent/VertexLit");
+
+            if (renderer != null)
+            {
+                if (renderer.material.HasProperty("_Color"))
+                {
+                    Color color = renderer.material.GetColor("_Color");
+                    StartCoroutine(ReSetColor(renderer, color));
+                }
+            }
+        }
+
+        RendererList.Clear();
         foreach (GameObject element in CullingList)
             FindRenderer(element);
 
@@ -108,6 +132,21 @@ public class FrustumLine : MonoBehaviour
             time -= Time.deltaTime;
 
             _renderer.material.SetColor("_Color", new Color(_color.r, _color.g, _color.b, time));
+        }
+    }
+    IEnumerator ReSetColor(MeshRenderer _renderer, Color _color)
+    {
+        float rColor = 0.0f;
+
+        while (true)
+        {
+            yield return null;
+
+            rColor += Time.deltaTime * 5;
+            _color.a = rColor;
+            _renderer.material.SetColor("_Color", new Color(_color.r, _color.g, _color.b, rColor));
+
+            if (rColor >= 255.0f) break;
         }
     }
 }

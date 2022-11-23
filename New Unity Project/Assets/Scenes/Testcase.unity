@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 913308708}
   - component: {fileID: 913308707}
   - component: {fileID: 913308706}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,6 +1062,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   CullingList: []
+  CulledList: []
   RendererList: []
   Mask:
     serializedVersion: 2
