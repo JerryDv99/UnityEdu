@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,7 +43,6 @@ public class FrustumLine : MonoBehaviour
             mainCamera.farClipPlane, 
             Camera.MonoOrStereoscopicEye.Mono,
             Line);
-
         CullingList.Clear();
 
         foreach (Vector3 element in Line)
@@ -58,7 +58,6 @@ public class FrustumLine : MonoBehaviour
                 if (!CullingList.Contains(hit.transform.gameObject))
                     CullingList.Add(hit.transform.gameObject);
         }
-
         RendererList.Clear();
 
         foreach (GameObject element in CullingList)

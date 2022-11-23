@@ -26,7 +26,7 @@ public class GetLine : MonoBehaviour
     void Update()
     {
         for (int i = 0; i < Points.Count - 1; ++i)
-            Debug.DrawLine(Points[i], Points[i + 1], Color.green);
+            Debug.DrawLine(Points[i], Points[i + 1], Color.green);        
     }
 
     public void BezierList()

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     private float Speed;
     private Rigidbody Rigid = null;
@@ -25,7 +25,7 @@ public class PlayerControler : MonoBehaviour
     {
         // 현재 스크립트가 포함된 객체의 Rigidbody 컴퍼넌트를 받아옴.
         // Rigidbody 컴퍼넌트가 존재하지 않으면 아무것도 받아오지 않음.
-        Rigid = this.GetComponent<Rigidbody>();       
+        Rigid = this.GetComponent<Rigidbody>();
 
         // 충돌처리를 진행하기 위해서는 아래 두 컴퍼넌트가 반드시 포함되어야 한다.
         // Rigidbody = 물리 엔진 : 움직이는 객체에 추가
@@ -38,7 +38,7 @@ public class PlayerControler : MonoBehaviour
         Speed = 5.0f;
         Power = 0;
         
-        BulletRender = false;
+        BulletRender = true;
     }
 
     void Update()
@@ -79,7 +79,7 @@ public class PlayerControler : MonoBehaviour
                    Mathf.Sin(90 * Mathf.Deg2Rad),
                     0.1f) * Radius + transform.position;
 
-                Vector3 Vibrater = new Vector3(
+                Vector3 Vibrator = new Vector3(
                     Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f), 0.0f) * Vib;
 
                 if (BulletRender)
@@ -87,19 +87,17 @@ public class PlayerControler : MonoBehaviour
                     // 총알을 복제
                     GameObject obj = Instantiate(BulletPrefab);
 
-                    // hit.point = 현재 hit의 위치
-                    // 현재 총알의 위치를 hit.point로 초기화
-                    obj.transform.position = offset + Vibrater;
+                    obj.transform.position = offset + Vibrator;
 
                     Rigidbody Rigid = obj.GetComponent<Rigidbody>();
 
                     Rigid.AddForce(FirePoint.transform.forward * 1000);
 
-                    Debug.DrawLine(FirePoint.position, offset + Vibrater, Color.red);
+                    Debug.DrawLine(FirePoint.position, offset + Vibrator, Color.red);
                 }
                 else
                 {
-                    Debug.DrawLine(FirePoint.position, offset + Vibrater + hit.point, Color.red);
+                    Debug.DrawLine(FirePoint.position, offset + Vibrator + hit.point, Color.red);
                 }
 
                 if (Input.GetKey(KeyCode.E))

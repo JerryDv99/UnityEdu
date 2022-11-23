@@ -37,9 +37,9 @@ public class MyFieldOfView : MonoBehaviour
         meshFilter = Obj.AddComponent<MeshFilter>();
 
         // Resources에서 Material을 들고옴
-        Material material = Resources.Load("Materials/MyStandard") as Material;
+        Material material = Resources.Load("Materials/Radar") as Material;
 
-        Resources.Load("Materials/MyStandard");
+        Resources.Load("Materials/Radar");
 
         renderer.material = material;
 
@@ -68,7 +68,7 @@ public class MyFieldOfView : MonoBehaviour
 
         foreach(Collider coll in CollObj)
         {
-            // TaggetMask의 모든 Target과의 방향을 구함
+            // TargetMask의 모든 Target과의 방향을 구함
             Vector3 Direction = (coll.transform.position - transform.position).normalized;
 
             // 시야 범위에 들어온 Target을 걸러낸다 
