@@ -67,8 +67,6 @@ public class EnemyController : MonoBehaviour
 
 
 
-       
-        
         foreach (Vector3 Point in PointList)
             Debug.DrawLine(ray.origin, // 시작점
                 (Point.normalized * Radius) + ray.origin, // 도착점
@@ -92,49 +90,53 @@ public class EnemyController : MonoBehaviour
             {
                 Mesh mesh = filter.mesh;
 
-                Vector3[] vertices = new Vector3[mesh.vertices.Length];
-
-                for (int i = 0; i < mesh.vertices.Length; ++i)
-                    vertices[i] = mesh.vertices[i];
-
-
-                List<Vector3> Temp = new List<Vector3>();
-
-                for(int i = 0; i < vertices.Length; ++i)
+                if(mesh != null)
                 {
-                    if (!Temp.Contains(vertices[i]) && hit.transform.position.y > vertices[i].y)
-                        Temp.Add(vertices[i]);
+                    Vector3[] vertices = new Vector3[mesh.vertices.Length];
 
+                    for (int i = 0; i < mesh.vertices.Length; ++i)
+                        vertices[i] = mesh.vertices[i];
+
+
+                    List<Vector3> Temp = new List<Vector3>();
+
+                    for (int i = 0; i < vertices.Length; ++i)
+                    {
+                        if (!Temp.Contains(vertices[i]) && hit.transform.position.y > vertices[i].y)
+                            Temp.Add(vertices[i]);
+
+                    }
+
+                    VertexList.Clear();
+                    Vector3[] BottomPoint = new Vector3[4];
+                    for (int i = 0; i < BottomPoint.Length; ++i)
+                    {
+                        BottomPoint[i] = new Vector3(
+                            Temp[i].x,// * hit.transform.lossyScale.x,
+                            0.1f,
+                            Temp[i].z);// * hit.transform.lossyScale.z);
+
+                        Matrix4x4 RotationMatrix;
+                        Matrix4x4 PosMatrix;
+                        Matrix4x4 ScaleMatrix;
+
+                        Vector3 eulerAngles = hit.transform.eulerAngles * Mathf.Deg2Rad;
+
+                        PosMatrix = Translate(hit.transform.position);
+
+                        RotationMatrix = RotationX(eulerAngles.x)
+                            * RotationY(eulerAngles.y)
+                            * RotationZ(eulerAngles.z);
+
+                        ScaleMatrix = Scale(hit.transform.lossyScale * 1.5f);
+
+                        Matrix4x4 Matrix = PosMatrix * RotationMatrix * ScaleMatrix;
+
+
+                        VertexList.Add(Matrix.MultiplyPoint(BottomPoint[i]));
+                    }
                 }
-
-                VertexList.Clear();
-                Vector3[] BottomPoint = new Vector3[4];
-                for (int i = 0; i < BottomPoint.Length; ++i)
-                {
-                    BottomPoint[i] = new Vector3(
-                        Temp[i].x,// * hit.transform.lossyScale.x,
-                        0.1f,
-                        Temp[i].z);// * hit.transform.lossyScale.z);
-
-                    Matrix4x4 RotationMatrix;
-                    Matrix4x4 PosMatrix;
-                    Matrix4x4 ScaleMatrix;
-
-                    Vector3 eulerAngles = hit.transform.eulerAngles * Mathf.Deg2Rad;
-
-                    PosMatrix = Translate(hit.transform.position);
-
-                    RotationMatrix = RotationX(eulerAngles.x) 
-                        * RotationY(eulerAngles.y) 
-                        * RotationZ(eulerAngles.z);
-
-                    ScaleMatrix = Scale(hit.transform.lossyScale * 1.5f);
-                     
-                    Matrix4x4 Matrix = PosMatrix * RotationMatrix * ScaleMatrix;
-
-
-                    VertexList.Add(Matrix.MultiplyPoint(BottomPoint[i]));                    
-                }                
+                                
             }
         }
         else

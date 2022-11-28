@@ -46,7 +46,9 @@ public class CreateEnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(10.0f);
 
-            if (transform.childCount > 0)
+            GameObject Jammo = GameObject.FindWithTag("Jammo");
+
+            if (Jammo != null)
                 continue;
 
             GameObject Obj = Instantiate(EnemyPrefab);

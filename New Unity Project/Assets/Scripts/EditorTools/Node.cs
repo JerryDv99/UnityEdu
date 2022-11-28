@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class Node : MonoBehaviour
 {
-    [HideInInspector] public Node node;
+    [HideInInspector] public Node next;
     private bool Check;
     private void Awake()
     {
@@ -38,5 +38,10 @@ public class Node : MonoBehaviour
     {
         if (collision.transform.name == "Ground")
             Check = false;
+    }
+
+    private void Update()
+    {
+        Debug.DrawLine(transform.position, next.transform.position, Color.blue);
     }
 }

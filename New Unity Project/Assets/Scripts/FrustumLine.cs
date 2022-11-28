@@ -78,6 +78,7 @@ public class FrustumLine : MonoBehaviour
                 if (renderer.material.HasProperty("_Color"))
                 {
                     Color color = renderer.material.GetColor("_Color");
+                    renderer.material.SetColor("_Color", new Color(color.r, color.g, color.b, color.a = 0.5f));
                     StartCoroutine(ReSetColor(renderer, color));
                 }
             }

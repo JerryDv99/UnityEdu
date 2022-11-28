@@ -20,18 +20,25 @@ public class WayPointEditor : EditorWindow
         EditorGUILayout.PropertyField(Obj.FindProperty("NodeList"));
 
         if (NodeList != null && GUILayout.Button("Create"))
-        {
-            GameObject Object = new GameObject("Node");
+            CreateNode();
             
-            Object.transform.parent = NodeList.transform;
-            Node node = Object.AddComponent<Node>();
-
-            Object.AddComponent<MyGizmo>();
-            MyGizmo myGizmo = Object.AddComponent<MyGizmo>();
-            myGizmo.color = Color.green;
-        }
-
 
         Obj.ApplyModifiedProperties();
+    }
+
+    private void CreateNode()
+    {
+        GameObject Object = new GameObject(NodeList.transform.childCount.ToString());
+        Object.transform.SetParent(NodeList.transform);
+
+        Object.transform.position = new Vector3(25.0f, 0.0f, 25.0f);
+
+        while (true)
+        {
+            
+
+
+            break;
+        }
     }
 }
