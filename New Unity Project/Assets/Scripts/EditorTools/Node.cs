@@ -7,7 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class Node : MonoBehaviour
 {
-    [HideInInspector] public Node next;
+    //[HideInInspector] 
+    public Node next;
     private bool Check;
     private void Awake()
     {
@@ -37,7 +38,13 @@ public class Node : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.name == "Ground")
+        {
+            Rigidbody Rigid = GetComponent<Rigidbody>();
+            Rigid.isKinematic = true;
+            Rigid.useGravity = false;
             Check = false;
+        }
+            
     }
 
     private void Update()

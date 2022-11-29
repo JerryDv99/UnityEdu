@@ -55,11 +55,11 @@ public class CreateEnemy : MonoBehaviour
 
             Obj.transform.tag = "Jammo";
 
-            Obj.transform.position = transform.position;
-
             // Obj.transform.parent = 계층구조를 설정해준다
             // parent = 부모를 설정
-            Obj.transform.parent = this.transform;
+            Obj.transform.parent = this.transform.parent.transform;
+
+            Obj.transform.position = transform.position;
 
             // 생성된 오브젝트를 EnemyManager 클래스에 보관
             EnemyManager.Instance.AddObject(Obj);

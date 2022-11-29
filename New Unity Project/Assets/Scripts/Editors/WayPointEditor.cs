@@ -19,26 +19,26 @@ public class WayPointEditor : EditorWindow
         SerializedObject Obj = new SerializedObject(this);
         EditorGUILayout.PropertyField(Obj.FindProperty("NodeList"));
 
-        if (NodeList != null && GUILayout.Button("Create"))
-            CreateNode();
+        //if (NodeList != null && GUILayout.Button("Create"))
+        //    CreateNodeList();
             
 
         Obj.ApplyModifiedProperties();
     }
 
-    private void CreateNode()
-    {
-        GameObject Object = new GameObject(NodeList.transform.childCount.ToString());
-        Object.transform.SetParent(NodeList.transform);
+    //private void CreateNodeList()
+    //{
+    //    GameObject Object = new GameObject(NodeList.transform.childCount.ToString());
+    //    Object.transform.SetParent(NodeList.transform);
 
-        Object.transform.position = new Vector3(25.0f, 0.0f, 25.0f);
+    //    Object.transform.position = new Vector3(25.0f, 0.0f, 25.0f);
 
-        while (true)
-        {
+    //    while (true)
+    //    {
             
 
 
-            break;
-        }
-    }
+    //        break;
+    //    }
+    //}
 }

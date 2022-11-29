@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 978b3aacd544c1440a0d8eebf09ccd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &770131954824026590
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -88,4 +89,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9e26f072a711b4aa994b97763e9ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 8669063580161632377, guid: e4770a3f77efcf040bfd71fb2ffd58f9, type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Ground
   - Jammo
+  - Node
   layers:
   - Default
   - TransparentFX
