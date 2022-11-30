@@ -13,6 +13,8 @@ public class EnemyManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+
+        //object [] Objects = Resources.LoadAll("Prefabs");
     }
 
     private List<GameObject> EnemyList = new List<GameObject>();

@@ -8,6 +8,8 @@ public class FrustumLine : MonoBehaviour
     private Camera mainCamera;
 
     [SerializeField] private GameObject Target;
+    [SerializeField] private Material material;
+
 
     [SerializeField] [Range(0.01f, 1.0f)] private float X, Y, W, H;
 
@@ -44,6 +46,7 @@ public class FrustumLine : MonoBehaviour
             mainCamera.farClipPlane, 
             Camera.MonoOrStereoscopicEye.Mono,
             Line);
+
         CullingList.Clear();
 
         foreach (Vector3 element in Line)
@@ -73,15 +76,12 @@ public class FrustumLine : MonoBehaviour
         {
             renderer.material.shader = Shader.Find("Transparent/VertexLit");
 
-            if (renderer != null)
+            if (renderer.material.HasProperty("_Color"))
             {
-                if (renderer.material.HasProperty("_Color"))
-                {
-                    Color color = renderer.material.GetColor("_Color");
-                    renderer.material.SetColor("_Color", new Color(color.r, color.g, color.b, color.a = 0.5f));
-                    StartCoroutine(ReSetColor(renderer, color));
-                }
-            }
+                Color color = renderer.material.GetColor("_Color");
+                renderer.material.SetColor("_Color", new Color(color.r, color.g, color.b, color.a = 0.5f));
+                StartCoroutine(ReSetColor(renderer, color));
+            }           
         }
 
         RendererList.Clear();
@@ -91,15 +91,12 @@ public class FrustumLine : MonoBehaviour
         foreach (MeshRenderer renderer in RendererList)
         {
             renderer.material.shader = Shader.Find("Transparent/VertexLit");
-
-            if (renderer != null)
+                        
+            if (renderer.material.HasProperty("_Color"))
             {
-                if (renderer.material.HasProperty("_Color"))
-                {
-                    Color color = renderer.material.GetColor("_Color");
-                    StartCoroutine(SetColor(renderer, color));
-                }
-            }
+                Color color = renderer.material.GetColor("_Color");
+                StartCoroutine(SetColor(renderer, color));
+            }            
         }
     }
 
@@ -137,14 +134,12 @@ public class FrustumLine : MonoBehaviour
     }
     IEnumerator ReSetColor(MeshRenderer _renderer, Color _color)
     {
-        float rColor = 0.0f;
-
+        float rColor = 0;
         while (true)
         {
             yield return null;
 
             rColor += Time.deltaTime * 5;
-            _color.a = rColor;
             _renderer.material.SetColor("_Color", new Color(_color.r, _color.g, _color.b, rColor));
 
             if (rColor >= 255.0f) break;

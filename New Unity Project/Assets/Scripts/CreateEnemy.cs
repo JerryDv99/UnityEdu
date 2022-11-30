@@ -53,11 +53,11 @@ public class CreateEnemy : MonoBehaviour
 
             GameObject Obj = Instantiate(EnemyPrefab);
 
-            Obj.transform.tag = "Jammo";
-
             // Obj.transform.parent = 계층구조를 설정해준다
             // parent = 부모를 설정
             Obj.transform.parent = this.transform.parent.transform;
+
+            Obj.transform.tag = "Jammo";
 
             Obj.transform.position = transform.position;
 
@@ -91,15 +91,13 @@ public class CreateEnemy : MonoBehaviour
     // 서서히 나타나게 하는 구간
     IEnumerator SetColor(SkinnedMeshRenderer renderer, Color color)
     {
-        float rColor = 0.0f;
+        float rColor = 0;
 
         while (true)
         {
             yield return null;
 
             rColor += Time.deltaTime;
-
-            color.a = rColor;
 
             renderer.material.SetColor("_Color", new Color(color.r, color.g, color.b, rColor));
 

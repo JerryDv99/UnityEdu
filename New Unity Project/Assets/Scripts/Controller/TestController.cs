@@ -20,9 +20,9 @@ public class TestController : MonoBehaviour
         transform.position += (dir.normalized * Time.deltaTime * 5.0f);
     }
 
-    private void OnTrigetEnter(Collision collision)
+    private void OnTrigetEnter(Collider other)
     {
-        if(Target.tag == "Node")
+        if(other.tag == "Node")
         {
             Target = Target.next;
         }

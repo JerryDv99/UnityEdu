@@ -20,7 +20,6 @@ public class EnemyController : MonoBehaviour
     public List<Vector3> VertexList = new List<Vector3>();
     public Vector3 TargetPosition;
 
-    // Start is called before the first frame update
     void Start()
     {
         Radius = 5.0f;
@@ -28,7 +27,6 @@ public class EnemyController : MonoBehaviour
         Count = 20;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Angle = transform.eulerAngles.y - 45.0f;
@@ -117,20 +115,20 @@ public class EnemyController : MonoBehaviour
                             Temp[i].z);// * hit.transform.lossyScale.z);
 
                         Matrix4x4 RotationMatrix;
-                        Matrix4x4 PosMatrix;
+                        Matrix4x4 PositionMatrix;
                         Matrix4x4 ScaleMatrix;
 
                         Vector3 eulerAngles = hit.transform.eulerAngles * Mathf.Deg2Rad;
 
-                        PosMatrix = Translate(hit.transform.position);
+                        PositionMatrix = MathManager.Instance.Translate(hit.transform.position);
 
-                        RotationMatrix = RotationX(eulerAngles.x)
-                            * RotationY(eulerAngles.y)
-                            * RotationZ(eulerAngles.z);
+                        RotationMatrix = MathManager.Instance.RotationX(eulerAngles.x)
+                            * MathManager.Instance.RotationY(eulerAngles.y)
+                            * MathManager.Instance.RotationZ(eulerAngles.z);
 
-                        ScaleMatrix = Scale(hit.transform.lossyScale * 1.5f);
+                        ScaleMatrix = MathManager.Instance.Scale(hit.transform.lossyScale * 1.5f);
 
-                        Matrix4x4 Matrix = PosMatrix * RotationMatrix * ScaleMatrix;
+                        Matrix4x4 Matrix = PositionMatrix * RotationMatrix * ScaleMatrix;
 
 
                         VertexList.Add(Matrix.MultiplyPoint(BottomPoint[i]));
@@ -150,110 +148,5 @@ public class EnemyController : MonoBehaviour
             Gizmos.color = Color.blue;
             Gizmos.DrawSphere(VertexList[i] + TargetPosition, 0.2f);            
         }        
-    }
-
-    public Matrix4x4 Translate(Vector3 position)
-    {
-        Matrix4x4 matrix = Matrix4x4.identity;
-
-        // 00   01   02   03   x
-        // 10   11   12   13   y
-        // 20   21   22   23   z
-        // 30   31   32   33   w
-        //  x    y    z    w
-
-        matrix.m03 = position.x;
-        matrix.m13 = position.y;
-        matrix.m23 = position.z;
-
-        return matrix;
-    }
-
-    public Matrix4x4 RotationX(float _angle)
-    {
-        Matrix4x4 matrix = Matrix4x4.identity;
-
-        // 00   01   02   03   x
-        // 10   11   12   13   y
-        // 20   21   22   23   z
-        // 30   31   32   33   w
-        //  x    y    z    w
-
-        //  0    0    0   0
-        //  0   cos -sin  0
-        //  0   sin  cos  0
-        //  0    0    0   0
-
-        matrix.m11 = matrix.m22 = Mathf.Cos(_angle);
-        matrix.m12 = -Mathf.Sin(_angle);
-        matrix.m21 = Mathf.Sin(_angle);
-
-        return matrix;
-    }
-
-    public Matrix4x4 RotationY(float _angle)
-    {
-        Matrix4x4 matrix = Matrix4x4.identity;
-
-        // 00   01   02   03   x
-        // 10   11   12   13   y
-        // 20   21   22   23   z
-        // 30   31   32   33   w
-        //  x    y    z    w
-
-        //  cos  0   sin  0
-        //  0    1    0   0
-        // -sin  0   cos  0
-        //  0    0    0   1
-
-        matrix.m00 = matrix.m22 = Mathf.Cos(_angle);
-        matrix.m02 = Mathf.Sin(_angle);
-        matrix.m20 = -Mathf.Sin(_angle);
-
-        return matrix;
-    }
-
-    public Matrix4x4 RotationZ(float _angle)
-    {
-        Matrix4x4 matrix = Matrix4x4.identity;
-
-        // 00   01   02   03   x
-        // 10   11   12   13   y
-        // 20   21   22   23   z
-        // 30   31   32   33   w
-        //  x    y    z    w
-
-        //  cos -sin  0   0
-        //  sin  cos  0   0
-        //  0    0    1   0
-        //  0    0    0   1
-
-        matrix.m00 = matrix.m11 = Mathf.Cos(_angle);
-        matrix.m01 = -Mathf.Sin(_angle);
-        matrix.m10 = Mathf.Sin(_angle);
-
-        return matrix;
-    }
-
-    public Matrix4x4 Scale(Vector3 _scale)
-    {
-        Matrix4x4 matrix = Matrix4x4.identity;
-
-        // 00   01   02   03   x
-        // 10   11   12   13   y
-        // 20   21   22   23   z
-        // 30   31   32   33   w
-        //  x    y    z    w
-
-        //  x    0    0   0
-        //  0    y    0   0
-        //  0    0    z   0
-        //  0    0    0   1
-
-        matrix.m00 = _scale.x;
-        matrix.m11 = _scale.y;
-        matrix.m22 = _scale.z;
-
-        return matrix;  
     }
 }

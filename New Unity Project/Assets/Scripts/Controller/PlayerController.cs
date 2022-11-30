@@ -97,7 +97,10 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.DrawLine(FirePoint.position, offset + Vibrator + hit.point, Color.red);
+                    Debug.DrawLine(FirePoint.position, /*offset + Vibrator + */ hit.point, Color.red);
+                    Debug.Log("offset :" + offset);
+                    Debug.Log("Vibrater :" + Vibrator);
+                    Debug.Log("hit.point :" + hit.point);
                 }
 
                 if (Input.GetKey(KeyCode.E))

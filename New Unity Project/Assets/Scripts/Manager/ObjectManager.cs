@@ -5,10 +5,9 @@ using UnityEngine;
 public class ObjectManager : MonoBehaviour
 {
     [HideInInspector] public static ObjectManager Instance = null;
-
-    //[HideInInspector] private List<GameObject> ObjectList = new List<GameObject>();
-
+        
     [HideInInspector] public Dictionary<string, GameObject> ObjectList = new Dictionary<string, GameObject>();
+
     private ObjectManager() { }
 
     private void Awake()

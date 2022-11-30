@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     // 외부에서의 생성 차단
     private GameManager() { }
     private GameObject JammoPointObject;
+
     private void Awake()
     {
         JammoPointObject = Resources.Load("Points/JammoPoint") as GameObject;
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
             yield return null;
 
             GameObject Obj = Instantiate(JammoPointObject);
+
+            Obj.AddComponent<WayPointController>();
 
             Obj.transform.name = Count.ToString();
 

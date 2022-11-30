@@ -10,6 +10,7 @@ public class Node : MonoBehaviour
     //[HideInInspector] 
     public Node next;
     private bool Check;
+
     private void Awake()
     {
         // 물리엔진을 받아온다
@@ -31,7 +32,7 @@ public class Node : MonoBehaviour
             transform.position = new Vector3(
                 Random.Range(-15, 15), 25.0f, Random.Range(-15, 15));            
             
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(5.0f);
         }
     }
 
@@ -40,8 +41,8 @@ public class Node : MonoBehaviour
         if (collision.transform.name == "Ground")
         {
             Rigidbody Rigid = GetComponent<Rigidbody>();
-            Rigid.isKinematic = true;
             Rigid.useGravity = false;
+            Rigid.isKinematic = true;
             Check = false;
         }
             
