@@ -38,9 +38,9 @@ public class GameManager : MonoBehaviour
 
             Obj.AddComponent<WayPointController>();
 
-            Obj.transform.name = Count.ToString();
+            Obj.transform.name = "Node_" + Count.ToString();
 
-            Obj.transform.parent = GameObject.Find("Jammo").transform;
+            Obj.transform.parent = GameObject.Find("PointList").transform;
 
             if (1 <= Count) break;
 

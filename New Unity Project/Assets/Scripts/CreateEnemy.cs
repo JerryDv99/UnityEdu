@@ -46,7 +46,8 @@ public class CreateEnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(10.0f);
 
-            GameObject Jammo = GameObject.FindWithTag("Jammo");
+           // GameObject Jammo = GameObject.FindWithTag("Jammo");
+            GameObject Jammo = Resources.Load<GameObject>("Jammo");
 
             if (Jammo != null)
                 continue;
@@ -58,6 +59,9 @@ public class CreateEnemy : MonoBehaviour
             Obj.transform.parent = this.transform.parent.transform;
 
             Obj.transform.tag = "Jammo";
+
+            // TestController 스크립트 추가
+            Obj.AddComponent<TestController>();
 
             Obj.transform.position = transform.position;
 

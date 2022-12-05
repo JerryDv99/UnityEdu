@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))] 
 public class TestController : MonoBehaviour
 {
-    [SerializeField] private Node Target;
+    private Node Target;
+    private int Index;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         Transform trans = transform.parent.transform;
-        Target = trans.Find("Node").GetChild(0).GetComponent<Node>();
+        Target = trans.Find("Node_" + Index.ToString()).GetChild(0).GetComponent<Node>();
+
     }
 
     // Update is called once per frame
@@ -18,13 +23,13 @@ public class TestController : MonoBehaviour
         Vector3 dir = Target.transform.position - transform.position;
         
         transform.position += (dir.normalized * Time.deltaTime * 5.0f);
-    }
 
-    private void OnTrigetEnter(Collider other)
-    {
-        if(other.tag == "Node")
-        {
+        float fDistance = Vector3.Distance(transform.position, Target.transform.position);
+
+        //if (hit)
+        //NodeManager.GetNode(Target, Target.next, hit.gameobject);
+
+        if(fDistance < 0.05f)
             Target = Target.next;
-        }
     }
 }

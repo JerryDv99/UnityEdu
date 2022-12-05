@@ -22,6 +22,14 @@ public class Node : MonoBehaviour
         // 충돌체를 받아온다
         SphereCollider coll = GetComponent<SphereCollider>();
         coll.radius = 0.2f;
+
+        StartCoroutine(isTriggerCheck(coll));
+    }
+
+    IEnumerator isTriggerCheck(SphereCollider coll)
+    {
+        yield return new WaitForSeconds(5.0f);
+        coll.isTrigger = true;
     }
 
     IEnumerator Start()
@@ -41,8 +49,8 @@ public class Node : MonoBehaviour
         if (collision.transform.name == "Ground")
         {
             Rigidbody Rigid = GetComponent<Rigidbody>();
+            
             Rigid.useGravity = false;
-            Rigid.isKinematic = true;
             Check = false;
         }
             

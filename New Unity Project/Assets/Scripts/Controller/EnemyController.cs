@@ -75,13 +75,16 @@ public class EnemyController : MonoBehaviour
     public void RayPoint()
     {
         //Ray rapPoint = new Ray(transform.position, transform.forward);
+        // 마우스 포인터의 방향으로 레이를 발사
         Ray rapPoint = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
 
+        // 레이를 Infinity만큼 출력
         if (Physics.Raycast(rapPoint, out hit, Mathf.Infinity))
         {
             TargetPosition = hit.transform.position;
+
             MeshFilter filter = hit.transform.GetComponent<MeshFilter>();
             
             if (filter != null)
@@ -102,8 +105,11 @@ public class EnemyController : MonoBehaviour
                     {
                         if (!Temp.Contains(vertices[i]) && hit.transform.position.y > vertices[i].y)
                             Temp.Add(vertices[i]);
-
                     }
+
+
+                    // ========
+
 
                     VertexList.Clear();
                     Vector3[] BottomPoint = new Vector3[4];
@@ -120,13 +126,13 @@ public class EnemyController : MonoBehaviour
 
                         Vector3 eulerAngles = hit.transform.eulerAngles * Mathf.Deg2Rad;
 
-                        PositionMatrix = MathManager.Instance.Translate(hit.transform.position);
+                        PositionMatrix = MathManager.Translate(hit.transform.position);
 
-                        RotationMatrix = MathManager.Instance.RotationX(eulerAngles.x)
-                            * MathManager.Instance.RotationY(eulerAngles.y)
-                            * MathManager.Instance.RotationZ(eulerAngles.z);
+                        RotationMatrix = MathManager.RotationX(eulerAngles.x)
+                            * MathManager.RotationY(eulerAngles.y)
+                            * MathManager.RotationZ(eulerAngles.z);
 
-                        ScaleMatrix = MathManager.Instance.Scale(hit.transform.lossyScale * 1.5f);
+                        ScaleMatrix = MathManager.Scale(hit.transform.lossyScale * 1.5f);
 
                         Matrix4x4 Matrix = PositionMatrix * RotationMatrix * ScaleMatrix;
 

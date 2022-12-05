@@ -6,7 +6,8 @@ public class WayPointController : MonoBehaviour
 {
     private void Start()
     {
-        int Count = Random.Range(6, 10);
+        //int Count = Random.Range(6, 10);
+        int Count = 2;
 
         for (int i = 0; i < Count; ++i)
         {

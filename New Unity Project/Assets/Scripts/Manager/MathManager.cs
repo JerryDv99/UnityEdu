@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class MathManager : MonoBehaviour
 {
-    [HideInInspector] public static MathManager Instance = null;
-
-    private MathManager() { }
-
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-    }
-
-    public Matrix4x4 Translate(Vector3 position)
+    static public Matrix4x4 Translate(Vector3 position)
     {
         Matrix4x4 matrix = Matrix4x4.identity;
 
@@ -31,7 +21,7 @@ public class MathManager : MonoBehaviour
         return matrix;
     }
 
-    public Matrix4x4 RotationX(float _angle)
+    static public Matrix4x4 RotationX(float _angle)
     {
         Matrix4x4 matrix = Matrix4x4.identity;
 
@@ -53,7 +43,7 @@ public class MathManager : MonoBehaviour
         return matrix;
     }
 
-    public Matrix4x4 RotationY(float _angle)
+    static public Matrix4x4 RotationY(float _angle)
     {
         Matrix4x4 matrix = Matrix4x4.identity;
 
@@ -75,7 +65,7 @@ public class MathManager : MonoBehaviour
         return matrix;
     }
 
-    public Matrix4x4 RotationZ(float _angle)
+    static public Matrix4x4 RotationZ(float _angle)
     {
         Matrix4x4 matrix = Matrix4x4.identity;
 
@@ -97,7 +87,7 @@ public class MathManager : MonoBehaviour
         return matrix;
     }
 
-    public Matrix4x4 Scale(Vector3 _scale)
+    static public Matrix4x4 Scale(Vector3 _scale)
     {
         Matrix4x4 matrix = Matrix4x4.identity;
 
