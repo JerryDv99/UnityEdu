@@ -14,10 +14,13 @@ public class Node : MonoBehaviour
     private void Awake()
     {
         // 물리엔진을 받아온다
-        Rigidbody Rigid =  GetComponent<Rigidbody>();
+        Rigidbody Rigid = GetComponent<Rigidbody>();
 
         // 받아온 물리엔진의 x 와 z 좌표를 고정시킨다
         Rigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+
+        MyGizmo Gizmo = gameObject.AddComponent<MyGizmo>();
+        Gizmo.color = Color.green;
 
         // 충돌체를 받아온다
         SphereCollider coll = GetComponent<SphereCollider>();

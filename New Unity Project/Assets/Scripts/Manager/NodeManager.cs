@@ -4,17 +4,54 @@ using UnityEngine;
 
 public class NodeManager : MonoBehaviour
 {
+    [HideInInspector] public static NodeManager Instance = null;
+
+    private NodeManager() { }
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
+
     [Range(-100.0f, 100.0f)]
     private float Height;
 
     private Vector3 StartNode;
     private Vector3 EndNode;
 
+    static public LayerMask Mask;
 
-    [SerializeField] private List<Vector3> Points = new List<Vector3>();
+    private List<Vector3> Points = new List<Vector3>();
 
     private void Start()
     {
+        Mask = ~(1 << 9);
+        /*
+        List<float> floating = new List<float>();
+
+        // 난수 10개 추출
+        for(int i = 0; i < 10; ++i)
+        {
+            while(true)
+            {
+                float fTemp = Random.Range(1, 100);
+
+                if (!floating.Contains(fTemp))
+                {
+                    floating.Add(fTemp);
+                    break;
+                }
+            }
+        }
+
+        // 람다식으로 정렬 ( n1 < n2 ) 오름차순
+        floating.Sort((t, d) => (tag.CompareTo(d)));
+
+        for (int i = 0; i < 10; ++i)
+            Debug.Log(floating[i]);
+        */
+
         Height = 0.0f;
 
         StartNode = new Vector3(-70.0f, 0.0f, 0.0f);
@@ -121,26 +158,138 @@ public class NodeManager : MonoBehaviour
         return VertexList;
     }
 
-    public static List<Vector3> GetNode(Vector3 front, Vector3 back, GameObject Object)
+    public static Node GetNode(GameObject Object, RaycastHit hit)
     {
-        List<Vector3> Vertices = GetVertices(Object);
+        // 현재 목표지점을 받아온다.
+        TestController test = Object.GetComponent<TestController>();
+        Node front = test.GetTarget();
+
+        // 다음 목표지점을 받아온다
+        Node end = front.next;
+
+        // 빈 노드 생성
+        Node node = new Node();
+        front.next = node;
+
+        // 현재 위치에 노도를 생성한다
+        {
+            GameObject CurrentObject = new GameObject("zero");
+            node = CurrentObject.AddComponent<Node>();
+            node.transform.position = Object.transform.position;            
+        }
+
+        
+        // 바닥지점에 있는 버텍스 리스트
+        List<Vector3> Vertices = GetVertices(hit.transform.gameObject);
+
+        // 출발지점, 중간지점, 도착지점 까지의 거리를 모두 별도로 보관할 변수
+        float[] frontDistance = new float[Vertices.Count];
+        float[] middleDistance = new float[Vertices.Count];
+        float[] backDistance = new float[Vertices.Count];        
+
+        // 중간지점을 확인
+        Vector3 middle = Vector3.Lerp(front.transform.position, end.transform.position, 0.3f);
+
+        // 모든 버텍스의 위치와 거리를 확인
+        for(int i = 0; i < Vertices.Count; ++i)
+        {
+            frontDistance[i] += Vector3.Distance(front.transform.position, Vertices[i]);
+            middleDistance[i] += Vector3.Distance(middle, Vertices[i]);
+            //backDistance[i] += Vector3.Distance(back, Vertices[i]);
+            backDistance[i] += 0.0f;
+        }
+
+        // 거리를 저장하기 위한 공간
+        float fResult = frontDistance[0] + middleDistance[0] + backDistance[0];
+        int index = 0;
+
+        for (int i = 1; i < Vertices.Count; ++i)
+        {
+            if(fResult < frontDistance[i] + middleDistance[i] + backDistance[i])
+            {
+                fResult = frontDistance[i] + middleDistance[i] + backDistance[i];
+                index = i;
+            }
+        }
+
+
+        
+        
+         
+        //=
+
+
+        // Vertex 저장 공간
+        List<Vector3> VertexList = new List<Vector3>();
+
+        // 
+        Vector3[] BottomPoint = new Vector3[Vertices.Count];
+
+        for (int i = 0; i < BottomPoint.Length; ++i)
+        {
+            BottomPoint[i] = new Vector3(
+                Vertices[i].x,// * hit.transform.lossyScale.x,
+                0.1f,
+                Vertices[i].z);// * hit.transform.lossyScale.z);
+
+            Matrix4x4 RotationMatrix;
+            Matrix4x4 PositionMatrix;
+            Matrix4x4 ScaleMatrix;
+
+            PositionMatrix = MathManager.Translate(hit.transform.position);
+
+            Vector3 eulerAngles = hit.transform.eulerAngles * Mathf.Deg2Rad;
+
+            RotationMatrix = MathManager.RotationX(eulerAngles.x)
+                * MathManager.RotationY(eulerAngles.y)
+                * MathManager.RotationZ(eulerAngles.z);
+
+            ScaleMatrix = MathManager.Scale(hit.transform.lossyScale * 1.5f);
+
+            Matrix4x4 Matrix = PositionMatrix * RotationMatrix * ScaleMatrix;
+
+            VertexList.Add(Matrix.MultiplyPoint(BottomPoint[i]));
+        }
+
+        for (int i = 0; i < VertexList.Count; ++i)
+        {
+            // Gizmo 생성
+
+        }
+            
+            
+            //Debug.DrawLine(hit.transform.position, VertexList[i], Color.green);
+
+        //RaycastHit[] Hits = Physics.RaycastAll(Vertices[index], Vertices[index], Mathf.Infinity, Mask);
+        node = node.next;
+        node = new Node();
 
         /*
         for (int i = 0; i < 10; ++i)
             Vector3.Lerp(front, back, i);
-        */
 
-        List<Vector3> nodes = new List<Vector3>();
+        
 
         //nodes.Add(front);
 
         {
-            nodes.Add(new Vector3());
-            nodes.Add(new Vector3());
+            Node node = new Node();
+            
+            
+            
+            
         }
 
-        //nodes.Add(back);
+        GameObject Obj = new GameObject("zero");
+        Object.transform.name = "zzz";
+        Obj.transform.SetParent(front.transform.parent);
 
-        return nodes;
+        Node node = Obj.AddComponent<Node>();
+        node.transform.position = Vector3.Lerp(front.transform.position, end.transform.position, 0.5f);
+        node.next = end;
+        front.next = node; 
+        */
+
+        return front;
     }
 }

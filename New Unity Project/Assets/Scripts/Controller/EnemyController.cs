@@ -113,6 +113,7 @@ public class EnemyController : MonoBehaviour
 
                     VertexList.Clear();
                     Vector3[] BottomPoint = new Vector3[4];
+
                     for (int i = 0; i < BottomPoint.Length; ++i)
                     {
                         BottomPoint[i] = new Vector3(

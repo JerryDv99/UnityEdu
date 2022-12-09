@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public static GameManager Instance = null;
 
     // 외부에서의 생성 차단
-    private GameManager() { }
     private GameObject JammoPointObject;
+    private GameManager() { }
 
     private void Awake()
     {

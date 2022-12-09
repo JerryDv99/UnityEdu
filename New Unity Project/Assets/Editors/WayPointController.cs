@@ -13,6 +13,8 @@ public class WayPointController : MonoBehaviour
         {
             GameObject Object = new GameObject(i.ToString());
 
+            Object.layer = 9;
+
             Object.transform.SetParent(this.transform);
 
             Object.AddComponent<Node>();
@@ -22,12 +24,9 @@ public class WayPointController : MonoBehaviour
                 Node FrontNode = transform.GetChild(i - 1).GetComponent<Node>();
                 Node Node = transform.GetChild(i).GetComponent<Node>();
 
-                Node.next = transform.GetChild(0).GetComponent<Node>();
+                //Node.next = transform.GetChild(0).GetComponent<Node>();
                 FrontNode.next = Node;
-            }
-
-            MyGizmo myGizmo = Object.AddComponent<MyGizmo>();
-            myGizmo.color = Color.green;
-           }        
+            }            
+        }        
     }
 }
