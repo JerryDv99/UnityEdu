@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class NodeManager : MonoBehaviour
 {
     [HideInInspector] public static NodeManager Instance = null;
-
-    private NodeManager() { }
 
     private void Awake()
     {
@@ -158,7 +157,7 @@ public class NodeManager : MonoBehaviour
         return VertexList;
     }
 
-    public static Node GetNode(GameObject Object, RaycastHit hit)
+    public Node GetNode(GameObject Object, RaycastHit hit)
     {
         // 현재 목표지점을 받아온다.
         TestController test = Object.GetComponent<TestController>();
@@ -261,8 +260,8 @@ public class NodeManager : MonoBehaviour
             //Debug.DrawLine(hit.transform.position, VertexList[i], Color.green);
 
         //RaycastHit[] Hits = Physics.RaycastAll(Vertices[index], Vertices[index], Mathf.Infinity, Mask);
-        node = node.next;
-        node = new Node();
+        //node = node.next;
+        //node = new Node();
 
         /*
         for (int i = 0; i < 10; ++i)

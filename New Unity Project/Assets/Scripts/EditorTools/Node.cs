@@ -8,7 +8,7 @@ using UnityEngine;
 public class Node : MonoBehaviour
 {
     //[HideInInspector] 
-    public Node next;
+    public Node next = null;
     private bool Check;
 
     private void Awake()
@@ -19,11 +19,12 @@ public class Node : MonoBehaviour
         // 받아온 물리엔진의 x 와 z 좌표를 고정시킨다
         Rigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
 
-        MyGizmo Gizmo = gameObject.AddComponent<MyGizmo>();
-        Gizmo.color = Color.green;
-
         // 충돌체를 받아온다
         SphereCollider coll = GetComponent<SphereCollider>();
+
+        MyGizmo Gizmo = gameObject.AddComponent<MyGizmo>();
+        Gizmo.color = Color.green; 
+
         coll.radius = 0.2f;
 
         StartCoroutine(isTriggerCheck(coll));
@@ -51,9 +52,10 @@ public class Node : MonoBehaviour
     {
         if (collision.transform.name == "Ground")
         {
-            Rigidbody Rigid = GetComponent<Rigidbody>();
-            
+            Rigidbody Rigid = GetComponent<Rigidbody>();            
             Rigid.useGravity = false;
+            Rigid.isKinematic = true;
+
             Check = false;
         }
             

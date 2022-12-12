@@ -24,7 +24,7 @@ public class WayPointController : MonoBehaviour
                 Node FrontNode = transform.GetChild(i - 1).GetComponent<Node>();
                 Node Node = transform.GetChild(i).GetComponent<Node>();
 
-                //Node.next = transform.GetChild(0).GetComponent<Node>();
+                Node.next = transform.GetChild(0).GetComponent<Node>();
                 FrontNode.next = Node;
             }            
         }        
