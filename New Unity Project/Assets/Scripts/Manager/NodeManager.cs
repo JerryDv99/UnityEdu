@@ -122,9 +122,9 @@ public class NodeManager : MonoBehaviour
     // 레이의 높이보다 낮은 버텍스를 확인하여 반환하는 함수
     public static List<Vector3> GetVertices(GameObject Object)
     {
-        List<Vector3> VertexList = new List<Vector3>();
-
         MeshFilter filter = Object.transform.GetComponent<MeshFilter>();
+
+        List<Vector3> VertexList = new List<Vector3>();
 
         if (filter != null)
         {
@@ -145,8 +145,7 @@ public class NodeManager : MonoBehaviour
                 for (int i = 0; i < mesh.vertices.Length; ++i)
                 {
                     // 조건에 맞는 모든 Vertex를 VertexList에 담는다
-                    // Object.transform.position.y의 위치가 최하위 위치일 수 있으므로 변경 필요
-                    if (!VertexList.Contains(mesh.vertices[i]) && /**/Object.transform.position.y > mesh.vertices[i].y)
+                    if (!VertexList.Contains(mesh.vertices[i]) && 0.0f > mesh.vertices[i].y)
                         VertexList.Add(mesh.vertices[i]);
                 }
             }
@@ -161,36 +160,30 @@ public class NodeManager : MonoBehaviour
     {
         // 현재 목표지점을 받아온다.
         TestController test = Object.GetComponent<TestController>();
-        Node front = test.GetTarget();
+        Node front = test.GetOldTarget();
 
         // 다음 목표지점을 받아온다
-        Node end = front.next;
+        Node end = front.next;        
 
-        // 빈 노드 생성
-        Node node = new Node();
-        front.next = node;
-
-        // 현재 위치에 노도를 생성한다
-        {
-            GameObject CurrentObject = new GameObject("zero");
-            node = CurrentObject.AddComponent<Node>();
-            node.transform.position = Object.transform.position;            
-        }
-
-        
         // 바닥지점에 있는 버텍스 리스트
         List<Vector3> Vertices = GetVertices(hit.transform.gameObject);
 
         // 출발지점, 중간지점, 도착지점 까지의 거리를 모두 별도로 보관할 변수
         float[] frontDistance = new float[Vertices.Count];
         float[] middleDistance = new float[Vertices.Count];
-        float[] backDistance = new float[Vertices.Count];        
+        float[] backDistance = new float[Vertices.Count];
 
+        for (int i = 0; i < Vertices.Count; ++i)
+        {
+            frontDistance[i] = 0.0f;
+            middleDistance[i] = 0.0f;
+            backDistance[i] = 0.0f;
+        }
         // 중간지점을 확인
         Vector3 middle = Vector3.Lerp(front.transform.position, end.transform.position, 0.3f);
 
         // 모든 버텍스의 위치와 거리를 확인
-        for(int i = 0; i < Vertices.Count; ++i)
+        for (int i = 0; i < Vertices.Count; ++i)
         {
             frontDistance[i] += Vector3.Distance(front.transform.position, Vertices[i]);
             middleDistance[i] += Vector3.Distance(middle, Vertices[i]);
@@ -204,7 +197,7 @@ public class NodeManager : MonoBehaviour
 
         for (int i = 1; i < Vertices.Count; ++i)
         {
-            if(fResult < frontDistance[i] + middleDistance[i] + backDistance[i])
+            if (fResult < frontDistance[i] + middleDistance[i] + backDistance[i])
             {
                 fResult = frontDistance[i] + middleDistance[i] + backDistance[i];
                 index = i;
@@ -212,9 +205,9 @@ public class NodeManager : MonoBehaviour
         }
 
 
-        
-        
-         
+
+
+
         //=
 
 
@@ -250,44 +243,32 @@ public class NodeManager : MonoBehaviour
             VertexList.Add(Matrix.MultiplyPoint(BottomPoint[i]));
         }
 
-        for (int i = 0; i < VertexList.Count; ++i)
-        {
-            // Gizmo 생성
+        VertexList.Sort((temp, dest) => Vector3.Distance(hit.point, temp).CompareTo(
+            Vector3.Distance(hit.transform.position, dest)));
 
-        }
-            
-            
-            //Debug.DrawLine(hit.transform.position, VertexList[i], Color.green);
-
-        //RaycastHit[] Hits = Physics.RaycastAll(Vertices[index], Vertices[index], Mathf.Infinity, Mask);
-        //node = node.next;
-        //node = new Node();
-
-        /*
-        for (int i = 0; i < 10; ++i)
-            Vector3.Lerp(front, back, i);
-
-        
-
-        //nodes.Add(front);
+        // 빈 노드 생성
+        Node node = front;
 
         {
-            Node node = new Node();
-            
-            
-            
-            
+            GameObject Obj = new GameObject("zero" + (0).ToString());
+            Obj.transform.SetParent(front.transform);
+            node.next = Obj.AddComponent<Node>();
+            node = node.next;
+            node.transform.position = new Vector3(Object.transform.position.x, 0.6f, Object.transform.position.z);
         }
 
-        GameObject Obj = new GameObject("zero");
-        Object.transform.name = "zzz";
-        Obj.transform.SetParent(front.transform.parent);
+        for (int i = 0; i < 2; ++i)
+        {
+            GameObject CurrentObject = new GameObject("zero" + (i + 1).ToString());
+            CurrentObject.transform.SetParent(front.transform);
 
-        Node node = Obj.AddComponent<Node>();
-        node.transform.position = Vector3.Lerp(front.transform.position, end.transform.position, 0.5f);
+            node.next = CurrentObject.AddComponent<Node>();
+            node = node.next;
+                        
+            node.transform.position = new Vector3(VertexList[i].x, 0.6f, VertexList[i].z);
+        }
+            
         node.next = end;
-        front.next = node; 
-        */
 
         return front;
     }

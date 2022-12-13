@@ -19,12 +19,23 @@ public class WayPointController : MonoBehaviour
 
             Object.AddComponent<Node>();
 
+            switch(i)
+            {
+                case 0:
+                    Object.transform.position = new Vector3(5.0f, 0.0f, 0.0f);
+                    break;
+                case 1:
+                    Object.transform.position = new Vector3(10.0f, 0.0f, 5.0f);
+                    break;
+            }
+
+
             if (i > 0)
             {
                 Node FrontNode = transform.GetChild(i - 1).GetComponent<Node>();
                 Node Node = transform.GetChild(i).GetComponent<Node>();
 
-                Node.next = transform.GetChild(0).GetComponent<Node>();
+                //Node.next = transform.GetChild(0).GetComponent<Node>();
                 FrontNode.next = Node;
             }            
         }        

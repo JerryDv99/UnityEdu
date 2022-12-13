@@ -44,10 +44,10 @@ public class CreateEnemy : MonoBehaviour
 
         while(true)
         {
-            yield return new WaitForSeconds(10.0f);
+            yield return new WaitForSeconds(2.0f);
 
-           // GameObject Jammo = GameObject.FindWithTag("Jammo");
-            GameObject Jammo = Resources.Load<GameObject>("Jammo");
+            GameObject Jammo = GameObject.FindWithTag("Jammo");
+            //GameObject Jammo = Resources.Load<GameObject>("Jammo");
 
             if (Jammo != null)
                 continue;
@@ -75,18 +75,16 @@ public class CreateEnemy : MonoBehaviour
             foreach (SkinnedMeshRenderer renderer in renderers)
             {
                 renderer.material.shader = Shader.Find("Transparent/VertexLit");
-
-                if (renderer != null)
+                                
+                if (renderer.material.HasProperty("_Color"))
                 {
-                    if (renderer.material.HasProperty("_Color"))
-                    {
-                        Color color = renderer.material.GetColor("_Color");
-                        // 투명으로 만든다
-                        renderer.material.SetColor("_Color", new Color(color.r, color.g, color.b, color.a = 0.0f));
-
-                        StartCoroutine(SetColor(renderer, color));
-                    }
+                    Color color = renderer.material.GetColor("_Color");
+                    // 투명으로 만든다
+                    renderer.material.SetColor("_Color", new Color(color.r, color.g, color.b, color.a = 0.0f));
+               
+                    StartCoroutine(SetColor(renderer, color));
                 }
+    
             }
         }
                 

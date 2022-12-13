@@ -67,7 +67,7 @@ public class EnemyController : MonoBehaviour
 
         foreach (Vector3 Point in PointList)
             Debug.DrawLine(ray.origin, // 시작점
-                (Point.normalized * Radius) + ray.origin, // 도착점
+                ray.origin + (Point.normalized * Radius), // 도착점
                 Color.red);
          
     }
